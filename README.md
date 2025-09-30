@@ -1,22 +1,26 @@
-# sv
+# pic-portal
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A simple web-app using [Uppy](https://uppy.io/) and connecting to a [Tus](https://tus.io) server to provide fast, reliable, bulk uploads of images and video.
 
-## Creating a project
+## Why does this exist
 
-If you're seeing this, you've probably already done this step. Congrats!
+I'm getting married, and with all modern weddings, there are lots of photos that the attendees will have taken on their phone. A simple portal to privately share these images to the bride and groom, without sharing it with anyone else, is exactly what I need! Add in [Uppy's](https://uppy.io) for upload queuing and [Tus's](https://tus.io) ability to make resumable uploads, and you have something robust enough that even the in-laws can use it.
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Features
 
-# create a new project in my-app
-npx sv create my-app
-```
+- [x] Ability to upload multiple files at once
+- [x] Handle reuploading files more than once, without taking up more space
+- [x] Can remove files from the queue
+- [ ] Can limit the uploads to specific file extensions
+- [ ] Works on IOS, Android and Desktop OSs
+- [ ] Is securable using a password
+- [ ] A tool for taking the Tus data and turn it back into the files on the server
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+installed dependencies with `npm install` (or `pnpm install` or `yarn`), 
+
+Then you can start a development server:
 
 ```sh
 npm run dev
@@ -36,3 +40,7 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+#### Note
+
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
