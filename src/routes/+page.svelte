@@ -2,19 +2,23 @@
 import Uppy from '@uppy/core'
 import {
   Dropzone,
-  FilesGrid,
   FilesList,
   UploadButton,
   UppyContextProvider,
 } from '@uppy/svelte'
 import Tus from '@uppy/tus'
+import Compressor from '@uppy/compressor';
+import GoldenRetriever from '@uppy/golden-retriever';
+
 import '@uppy/svelte/css/style.css'
 
 const uppy = new Uppy()
   .use(Tus, {
     //endpoint: 'https://tusd.tusdemo.net/files/',
-    endpoint: 'http://localhost:8080/files/',
+    endpoint: 'http://192.168.8.131:8080/files/',
   })
+  .use(Compressor)
+  .use(GoldenRetriever);
 
 let dialogRef: HTMLDialogElement
 </script>
@@ -39,9 +43,9 @@ let dialogRef: HTMLDialogElement
       <FilesList />
     </article>
 
-    <article>
+    <!-- <article>
       <h2 class="text-2xl my-4">Thumbnails</h2>
       <FilesGrid columns={3} />
-    </article>
+    </article> -->
   </main>
 </UppyContextProvider>
