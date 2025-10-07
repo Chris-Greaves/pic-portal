@@ -33,7 +33,6 @@
 		"@uppy/compressor": "^3.0.1",
 		"@uppy/core": "^5.0.2",
 		"@uppy/drag-drop": "^5.0.2",
-		"@uppy/golden-retriever": "^5.1.0",
 		"@uppy/svelte": "^5.1.0",
 		"@uppy/tus": "^5.0.1"
 	}
