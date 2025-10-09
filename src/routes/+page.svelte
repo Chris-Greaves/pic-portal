@@ -28,7 +28,7 @@ const dashboardOptions = {
 let nameValue: string = "";
 
 function updateMetadata() {
-  uppy.setMeta({uploader_name: nameValue})
+  uppy.setMeta({uploaded_by: nameValue})
 }
 </script>
 
