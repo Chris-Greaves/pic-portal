@@ -8,10 +8,11 @@ import Compressor from '@uppy/compressor';
 import '@uppy/svelte/css/style.css'
 import '@uppy/dashboard/css/style.min.css';
 
+import { env } from '$env/dynamic/public';
+
 const uppy = new Uppy()
   .use(Tus, {
-    //endpoint: 'https://tusd.tusdemo.net/files/',
-    endpoint: 'http://192.168.8.131:8080/files/',
+    endpoint: `http://${env.PUBLIC_TUS_HOST}:${env.PUBLIC_TUS_PORT}/files/`,
   })
   .use(Compressor)
 
