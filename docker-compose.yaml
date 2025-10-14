@@ -11,5 +11,8 @@ services:
     image: tusproject/tusd:latest
     ports:
       - "8080:8080"
-    volumes:
-      - ./data:/srv/tusd-data/data
+#     volumes:
+#       - data:/srv/tusd-data/data
+
+# volumes:
+#   data:
