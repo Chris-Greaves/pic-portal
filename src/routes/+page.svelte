@@ -13,7 +13,7 @@ import { env } from '$env/dynamic/public';
 
 const uppy = new Uppy()
   .use(Tus, {
-    endpoint: `http://${env.PUBLIC_TUS_HOST}:${env.PUBLIC_TUS_PORT}/files/`,
+    endpoint: `${env.PUBLIC_TUS_SCHEMA}://${env.PUBLIC_TUS_HOST}:${env.PUBLIC_TUS_PORT}/files/`,
   })
   .use(Compressor)
 
