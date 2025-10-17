@@ -11,9 +11,11 @@ import '@uppy/dashboard/css/style.min.css';
 
 import { env } from '$env/dynamic/public';
 
+const tusPort = env.PUBLIC_TUS_PORT != undefined ? `:${env.PUBLIC_TUS_PORT}` : ""
+
 const uppy = new Uppy()
   .use(Tus, {
-    endpoint: `${env.PUBLIC_TUS_SCHEMA}://${env.PUBLIC_TUS_HOST}:${env.PUBLIC_TUS_PORT}/files/`,
+    endpoint: `${env.PUBLIC_TUS_SCHEMA}://${env.PUBLIC_TUS_HOST}${tusPort}/files/`,
   })
   .use(Compressor)
 
