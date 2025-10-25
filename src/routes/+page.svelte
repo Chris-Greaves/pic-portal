@@ -17,7 +17,10 @@ const uppy = new Uppy()
   .use(Tus, {
     endpoint: `${env.PUBLIC_TUS_SCHEMA}://${env.PUBLIC_TUS_HOST}${tusPort}/files/`,
   })
-  .use(Compressor)
+
+if (env.PUBLIC_UPPY_USE_COMPRESSOR == "true") {
+  uppy.use(Compressor)
+}
 
 uppy.setOptions({
 	restrictions: { allowedFileTypes: ["image/*", "video/*"] },
