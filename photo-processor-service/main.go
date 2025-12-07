@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/Chris-Greaves/pic-portal/photo-processor-service/types"
 )
@@ -66,7 +67,7 @@ func processUpload(upload types.FileInfo) error {
 		return err
 	}
 
-	outputDir2 := filepath.Join(outputDir, upload.MetaData["uploaded_by"])
+	outputDir2 := filepath.Join(outputDir, strings.TrimSpace(upload.MetaData["uploaded_by"]))
 	exists, err := dirExists(outputDir2)
 	if err != nil {
 		return err
